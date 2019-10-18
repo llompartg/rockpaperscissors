@@ -287,11 +287,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Guillem\\source\\repos\\RockPaperScissors\\RockPaperScissors\\RockPaperScissors.fsproj",
+      "projectUniqueName": "C:\\Git\\rockpaperscissors\\src\\RockPaperScissors\\RockPaperScissors.fsproj",
       "projectName": "RockPaperScissors",
-      "projectPath": "C:\\Users\\Guillem\\source\\repos\\RockPaperScissors\\RockPaperScissors\\RockPaperScissors.fsproj",
+      "projectPath": "C:\\Git\\rockpaperscissors\\src\\RockPaperScissors\\RockPaperScissors.fsproj",
       "packagesPath": "C:\\Users\\Guillem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Guillem\\source\\repos\\RockPaperScissors\\RockPaperScissors\\obj\\",
+      "outputPath": "C:\\Git\\rockpaperscissors\\src\\RockPaperScissors\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

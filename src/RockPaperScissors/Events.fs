@@ -6,42 +6,50 @@ module Events =
     type GameId = string
     type PlayerId = string
 
-    type PlayerCreated = {
+    
+    type PlayerEvent = 
+    | PlayerCreated of PlayerCreated
+    | PlayerNameChanged of PlayerNameChanged
+    and PlayerCreated = {
         PlayerId: PlayerId
         Name: string
     }
-    type PlayerNameChanged  = {
+    and PlayerNameChanged  = {
         PlayerId: PlayerId
         Name: string
     }
 
     type Shape = Rock | Paper | Scissors
     
-    type PlayerJoined = {
-        GameId: GameId
-        PlayerId: PlayerId
-    }
 
-    type PlayerLeft = {
-        GameId: GameId
-        PlayerId: PlayerId
-    }
-
-    type GameCreated = {
+    type GameEvent = 
+    | GameCreated of GameCreated
+    | PlayerJoined of PlayerJoined
+    | PlayerLeft of PlayerLeft
+    | GameStarted of GameStarted
+    | PlayerPlayed of PlayerPlayed
+    | GameEnded of GameEnded
+    and GameCreated = {
         Id: GameId
         Host: PlayerId
     }
-
-    type GameStarted = {
+    and PlayerJoined = {
+        GameId: GameId
+        PlayerId: PlayerId
+    }
+    and PlayerLeft = {
+        GameId: GameId
+        PlayerId: PlayerId
+    }
+    and GameStarted = {
         Id: GameId
     }
-
-    type PlayerPlayed = {
+    and PlayerPlayed = {
         GameId: GameId
         PlayerId: PlayerId
         Shape: Shape
     }
-    type GameEnded = {
+    and GameEnded = {
         Id: GameId
         Winner: PlayerId
     }
