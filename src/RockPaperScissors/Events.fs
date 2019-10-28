@@ -54,11 +54,26 @@ module Events =
         Winner: PlayerId
     }
 
-    let e1: GameCreated =  { Id = "1234"; Host = "John" }
-    let e2: PlayerJoined = { GameId = "1234"; PlayerId = "Mike" }
-    let e3: PlayerLeft = { GameId = "1234"; PlayerId = "Mike" }
-    let e4: PlayerJoined = { GameId = "1234"; PlayerId = "Peter"}
-    let e5: GameStarted = { Id = "1234" }
-    let e6: PlayerPlayed = { GameId = "1234"; PlayerId = "Peter"; Shape = Rock}
-    let e7: PlayerPlayed = { GameId = "1234"; PlayerId = "John"; Shape = Paper}
-    let e8: GameEnded = { Id = "1234"; Winner = "John"}
+    let e1 = GameEvent.GameCreated { Id = "1234"; Host = "John" }
+    let e2 = GameEvent.PlayerJoined { GameId = "1234"; PlayerId = "Mike" }
+    let e3 = GameEvent.PlayerLeft { GameId = "1234"; PlayerId = "Mike" }
+    let e4 = GameEvent.PlayerJoined{ GameId = "1234"; PlayerId = "Peter"}
+    let e5 = GameEvent.GameStarted  { Id = "1234" }
+    let e6 = GameEvent.PlayerPlayed{ GameId = "1234"; PlayerId = "Peter"; Shape = Rock}
+    let e7 = GameEvent.PlayerPlayed{ GameId = "1234"; PlayerId = "John"; Shape = Paper}
+    let e8 = GameEvent.GameEnded{ Id = "1234"; Winner = "John"}
+
+    let events: GameEvent list = [e1; e2; e3; e4; e5; e6; e7]
+
+    type GameStatus = Waiting | Started | Ended
+    type GameState = {
+        Status: GameStatus
+        Host: PlayerId
+        Rival: PlayerId
+        Winner: PlayerId option
+    }
+
+
+    let fold state events  =
+        state
+
